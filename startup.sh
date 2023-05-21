@@ -26,17 +26,13 @@ systemctl reload firewalld.service || exit 1
 
 # git最新版のインストール
 cd /usr/local/src
-wget https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.39.3.tar.gz || echo 'gitのインストールに失敗しました'
-tar -zxf git-2.39.3.tar.gz
-cd git-2.39.3/
+wget https://www.kernel.org/pub/software/scm/git/git-2.4.0.tar.gz || echo 'gitのインストールに失敗しました'
+tar zxvf git-2.4.0.tar.gz
+rm -rf git-2.4.0.tar.gz 
+cd git-2.4.0
 
-## makeエラー用
-yum install -y curl-devel
-yum install -y gcc
-yum install -y openssl-devel
-yum install -y expat-devel
-yum install -y cpan
-yum install -y gettext
+## コンパイルツール
+yum install -y curl-devel gcc openssl-devel expat-devel cpan gettext
 
 make prefix=/usr/local all
 make prefix=/usr/local install
