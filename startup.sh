@@ -32,8 +32,6 @@ cd git-2.4.0
 
 ## コンパイルツール
 yum install -y curl-devel gcc openssl-devel expat-devel cpan gettext
-## コンパイルツール
-yum install -y curl-devel gcc openssl-devel expat-devel cpan gettext
 
 make prefix=/usr/local all
 make prefix=/usr/local install
