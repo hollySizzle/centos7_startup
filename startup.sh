@@ -25,11 +25,13 @@ firewall-cmd --add-service=https --zone=public --permanent || exit 1
 systemctl reload firewalld.service || exit 1
 
 # git最新版のインストール
-yum -y install git
-cd /usr/local/src/
-git clone git://git.kernel.org/pub/scm/git/git.git
-cd git
-yum remove -y git
+wget https://www.kernel.org/pub/software/scm/git/git-2.4.0.tar.gz || echo 'gitのインストールに失敗しました'
+tar zxvf git-2.4.0.tar.gz
+rm -rf git-2.4.0.tar.gz 
+cd git-2.4.0
+
+## コンパイルツール
+yum install -y curl-devel gcc openssl-devel expat-devel cpan gettext
 ## コンパイルツール
 yum install -y curl-devel gcc openssl-devel expat-devel cpan gettext
 
