@@ -11,10 +11,10 @@ mkdir /root/centos7_startup_scripts
 wget --no-check-certificate https://github.com/hollySizzle/centos7_startup/archive/refs/heads/main.zip -P /root/centos7_startup_scripts
 ~~~
 ~~~
-unzip -j main.zip
+unzip -j -d /root/centos7_startup_scripts /root/centos7_startup_scripts/main.zip
 ~~~
 ~~~
-rm -rf main.zip
+rm -rf /root/centos7_startup_scripts/main.zip
 ~~~
 
 # HowTo
