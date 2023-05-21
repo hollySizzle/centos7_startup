@@ -5,6 +5,7 @@ yum -y update || exit 1
 # パスワードログインの禁止
 sed -i 's/^PasswordAuthentication yes/PasswordAuthentication no/' /etc/ssh/sshd_config || exit 1
 sed -i 's/^#PubkeyAuthentication yes/PubkeyAuthentication yes/' /etc/ssh/sshd_config || exit 1
+sed -i 's/^#PermitRootLogin yes/PermitRootLogin no/' /etc/ssh/sshd_config || exit 1
 
 # wheelグループはsudo時にパスワード省略
 echo '%wheel ALL=(ALL) NOPASSWD: ALL' | sudo EDITOR='tee -a' visudo || exit 1
