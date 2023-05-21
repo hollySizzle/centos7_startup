@@ -1,0 +1,2 @@
+# centos7_startup
+centos7の初期設定･git2インストール･dockerインストールを行うスクリプト
