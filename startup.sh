@@ -25,7 +25,7 @@ systemctl reload firewalld.service || exit 1
 cd /usr/local/src
 wget https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.39.3.tar.gz || echo 'gitのインストールに失敗しました'
 tar -zxf git-2.39.3.tar.gz
-cd git-2.39.3.tar
+cd git-2.39.3/
 
 ## makeエラー用
 yum install -y curl-devel
