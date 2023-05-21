@@ -47,6 +47,7 @@ yum-config-manager --add-repo \
     https://download.docker.com/linux/centos/docker-ce.repo || exit 1
 yum install -y docker-ce docker-ce-cli containerd.io || exit 1
 systemctl enable docker || exit 1
+systemctl restart docker.service
 
 # docker composeのインストール
 curl -L "https://github.com/docker/compose/releases/download/2.18.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose || exit 1
