@@ -45,8 +45,8 @@ systemctl enable docker || exit 1
 systemctl restart docker.service
 
 # docker composeのインストール
-curl -L "https://github.com/docker/compose/releases/download/2.18.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose || exit 1
-chmod +x /usr/local/bin/docker-compose || exit 1
+curl -L "https://github.com/docker/compose/releases/download/2.18.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/bin/docker-compose || exit 1
+chmod +x /usr/bin/docker-compose || exit 1
 
 # /etc/ssh/sshd_configファイルを編集します
 sed -i 's/#PasswordAuthentication yes/PasswordAuthentication no/' /etc/ssh/sshd_config || exit 1
